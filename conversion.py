@@ -34,10 +34,7 @@ def conversion_mode():
         to_base = int(to_base_entry.get())
 
         converted_number = convert_number(number, from_base, to_base)
-        if converted_number == -1: 
-            result_text.delete("1.0", "end")
-            result_text.insert("1.0", "Error: The number must not be negative")
-        elif converted_number is not None:
+        if converted_number != "NULL":
             result_text.delete("1.0", "end")
             result_text.insert("1.0", f"The result: {converted_number}")
         else:

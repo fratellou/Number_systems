@@ -2,24 +2,61 @@ import random
 from tkinter import Tk, Label, ttk, Text, Scrollbar, filedialog, Toplevel
 
 
+def r_to_decimal(num, r):
+    res = 0
+    try:
+        numeric,decimal = num.split('.')
+        for i in range(len(numeric)):
+            if numeric[i].isdigit():
+                res += int(numeric[i]) * (r ** (len(numeric) - i - 1))
+            else:
+                res += (ord(numeric[i]) - ord('A') + 10) * (r **(len(numeric) - i - 1))
+        for i in range(len(decimal)):
+            if decimal[i].isdigit():
+                res += int(decimal[i]) * (r ** -(i+1))
+            else:
+                res += (ord(decimal[i]) - ord('A') + 10) * (r **-(i+1))
+    except:
+        for i in range(len(num)):
+            if num[i].isdigit():
+                res += int(num[i]) * (r ** (len(num) - i - 1))
+            else:
+                res += (ord(num[i]) - ord('A') + 10) * (r **(len(num) - i - 1))
+    return res
+
+def decimal_to_r(num, r, decimal_places = 5):
+    res = ''
+    decimal_part = float('0.' + str(num).split('.')[1])
+    num = int(num)
+    while num > 0:
+        temp = num % r
+        if temp < 10:
+            res += str(temp)
+        else:
+            res += chr(ord('A') + temp - 10)
+        num //= r
+    res = res[::-1]
+    res += '.'
+    for i in range(decimal_places):
+        temp = decimal_part * r
+        if temp < 10:
+            res += str(int(temp))
+        else:
+            res += chr(ord('A') + int(temp) - 10)
+        decimal_part = float('0.' + str(temp).split('.')[1])
+
+    return res
+
 def convert_number(number, from_base, to_base):
-    #if (number < 0): return NULL
-    # Check if the number is a float
-    is_float = '.' in str(number)
-
-    # Convert the integer part of the float to the desired base
-    decimal_number_int = int(str(number).split('.')[0], from_base)
-    converted_number_int = format(decimal_number_int, 'x' if to_base == 16 else '')
-
-    # If the number is a float, convert the fractional part as well
-    if is_float:
-        decimal_number_frac = int(str(number).split('.')[1], from_base)
-        converted_number_frac = format(decimal_number_frac, 'x' if to_base == 16 else '')
-        converted_number = f"{converted_number_int}.{converted_number_frac}"
-    else:
-        converted_number = converted_number_int
-
+    if ((from_base in [2, 8, 16, 10]) == 0 or (to_base in [2, 8, 16, 10]) == 0): return "NULL"
+    # Converting a number to decimal notation
+    decimal_number = r_to_decimal(number, from_base)
+    
+    # Converting a number from a decimal number system to a given one
+    converted_number = decimal_to_r(decimal_number, to_base)
     return converted_number
+    
+    
 
 def self_testing_mode():
     number_type = input("Выберите тип чисел (int/float): ")
@@ -85,4 +122,4 @@ def testing_mode():
     print("Неправильных ответов:", incorrect_answers)
 
 if __name__ == "__main__":
-    print(convert_number(5, 10, 2))
+    print(convert_number("10", 10, 2))
