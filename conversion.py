@@ -2,6 +2,7 @@ import random
 from tkinter import Label, ttk, Text, Toplevel
 from systems import convert_number
 
+
 def conversion_mode():
     
     # Create a Toplevel window instead of a new Tk() window

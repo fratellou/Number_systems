@@ -1,5 +1,6 @@
 from tkinter import Label, ttk, Text, Scrollbar, filedialog, Toplevel
 
+
 def display_tooltip(event, tooltip_label, tooltip):
     tooltip_label.config(text=tooltip)
 

@@ -21,7 +21,6 @@ def convert_number(number, from_base, to_base):
 
     return converted_number
 
-
 def self_testing_mode():
     number_type = input("Выберите тип чисел (int/float): ")
     min_value = float(input("Введите нижнюю границу диапазона значений: "))
