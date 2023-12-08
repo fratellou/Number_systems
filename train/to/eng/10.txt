@@ -1,0 +1,4 @@
+This system uses numbers from 0 to 9. It is used in everyday life and is the most common. All the numbers that surround us are represented in this system.
+There is a number a1a2a3 in the number system with base b. To transfer to the 10th system, it is necessary to multiply each digit of the number by bn, where n is the digit number. Thus, a1a2a3(b) = a1*b2+ a2*b1 +a3*b0(10).
+
+Example: 101(2) = 1*22 + 0*21 + 1*20 = 4+0+1 = 5(10)

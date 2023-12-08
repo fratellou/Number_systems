@@ -1,0 +1,19 @@
+In this system, eight digits are used - from 0 to 7. Each digit indicates a certain number of units that correspond to its category. It is also sometimes used in digital technology.
+
+To the binary system:
+Each digit of the octal system is a block of three binary digits. For example, the digit 2 in the octal system is represented by the binary digits "010", 5 - "101", etc.
+   To convert, we translate each digit in the octal number string into the corresponding block of binary digits.
+   The final string of binary digits will be the result of conversion from octal to binary.
+   345(8) = 011100101(2)
+
+To the decimal system:
+   - The digits of a number in the octal number system are multiplied by powers of 8 - from right to left.
+   - For example, the number 245 in the octal system is converted to decimal as follows:
+2*8^2 + 4*8^1 + 5*8^0 = 2*64 + 4*8 + 5*1 = 128 + 32 + 5 = 165.
+   - The amount received will be a number in the decimal system numbers.
+   345(8) = 3*8^2 + 4*8^1 + 5*8^0 = 3*64 + 4*8 + 5*1 = 192 + 32 + 5 = 229(10)
+
+To the hexadecimal system:
+   - Numbers in the octal number system are converted to the decimal system.
+   - Next, the resulting decimal number is converted to the hexadecimal system by converting digits to the corresponding characters (0-9, A-F).
+   345(8) = E5(16)

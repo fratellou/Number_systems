@@ -1,0 +1,13 @@
+This system uses numbers from 0 to 9. It is used in everyday life and is the most common. All the numbers that surround us are represented in this system.
+
+The whole part:
+Sequentially divide the whole part of the decimal number by the base of the system to which we translate, until the decimal number becomes zero.
+The residuals obtained during division are the digits of the desired number. The number in the new system is recorded starting from the last remainder.
+Fractional part:
+The fractional part of the decimal number is multiplied by the base of the system to which you want to convert. We separate the whole part. We continue to multiply the fractional part by the base of the new system until it becomes equal to 0.
+The numbers in the new system make up the whole parts of the multiplication results in the order corresponding to their receipt.
+Example: let's convert 15(10) to octal:
+
+15\8 = 1, remainder 7
+1\8 = 0, remainder 1
+Writing down all the residuals from bottom to top, we get the final number 17. Therefore, 15(10) = 178.

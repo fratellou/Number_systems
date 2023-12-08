@@ -1,0 +1,26 @@
+In this system, eight digits are used - from 0 to 7. Each digit indicates a certain number of units that correspond to its category. It is also sometimes used in digital technology.
+
+Binary translation:
+Divide a binary number into groups of 3 digits, starting from the right.
+   If the last group contains less than 3 digits, add leading zeros.
+   Then replace each group with the corresponding octal digit:
+     - 000 = 0
+     - 001 = 1
+     - 010 = 2
+     - 011 = 3
+     - 100 = 4
+     - 101 = 5
+     - 110 = 6
+     - 111 = 7
+   Combine the resulting octal digits into one number and this will be the result.
+
+Decimal translation:
+   Divide the decimal number by 8.
+   Write down the remainder of the division at the bottom.
+   Divide the resulting quotient again by 8 and write down the new residuals at the bottom.
+   Continue dividing by 8 and recording the remainder until the result of the division is 0.
+   Reverse the remainder written at the bottom, and it will be an octal number.
+
+Hexadecimal Translation:
+First, convert a hexadecimal number to a binary number.
+   Then convert the binary number to an octal number using the method described above for converting from binary to octal notation.

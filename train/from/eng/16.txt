@@ -1,0 +1,16 @@
+This system uses sixteen digits - from 0 to 9 and from A to F. It is most common in modern computers. Using it, for example, indicate the color. ##FF0000 - red light.
+
+To binary:
+A hexadecimal number is split into separate digits and each digit is replaced by its corresponding four-digit binary number.
+Example: Enter this numeric value 3A.
+3A = 0011 1010
+
+In the octal:
+A hexadecimal number is split into separate digits and each digit is replaced by its corresponding three-digit octal number.
+Example: Enter this numeric value 3A.
+3A = 35
+
+To decimal:
+The hexadecimal number is divided into separate digits, each digit is multiplied by 16 to the power equal to the position of the digit from left to right, and all the resulting products are summed.
+Example: Use the aesthetic number 3A.
+3A = (3 * 16^1) + ( Ah * 16^0) = (3 * 16) + (10 * 1) = 48 + 10 = 58

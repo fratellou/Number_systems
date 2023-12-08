@@ -1,0 +1,22 @@
+In this system, only two digits are used - 0 and 1. It is used in computing.
+
+In the octal number system:
+First you need to divide the binary number into groups of 3 digits starting from the right, adding zeros if necessary. Next, each group should be replaced with the corresponding octal symbol. For example:
+   Binary number: 11010010
+   We divide into groups: 001 101 001 0
+   Replace with octal characters: 3 5 1 0
+Thus, the binary number 11010010 will be equal to 3510 in the octal number system.
+
+To the decimal system:
+   To perform the translation, you need to multiply each digit of a binary number by the corresponding power of 2 and then add up the results. For example:
+   Binary number: 11010010
+   Multiply each digit by the power of the number 2: (1*2^7) + (1*2^6) + (0*2^5) + (1*2^4) + (0*2^3) + (0*2^2) + (1*2^1) + (0*2^0)
+Adding up the results: 128 + 64 + 16 + 2 = 210
+Thus, the binary number 11010010 will be equal to 21010 in the decimal system.
+
+To the hexadecimal number system:
+   Similarly to converting to the octal system, you need to divide a binary number into groups of 4 digits starting from the right, adding zeros if necessary. Then each group should be replaced with the corresponding hexadecimal character. For example:
+   Binary number: 11010010
+   We divide into groups: 0011 0100 10
+   Replace with hexadecimal characters: 34 2
+   Thus, the binary number 11010010 will be equal to 342 in the hexadecimal notation.

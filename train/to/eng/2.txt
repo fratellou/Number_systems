@@ -1,0 +1,46 @@
+In this system, only two digits are used - 0 and 1. It is used in computing.
+
+Transfer from the binary system:
+   This method is based on representing each digit of an eight-digit number as a three-digit binary combination. Below is the compliance table:
+     Octal digit | Binary combination
+     -----------------|-------------------
+             0        |         000
+             1        |         001
+             2        |         010
+             3        |         011
+             4        |         100
+             5        |         101
+             6        |         110
+             7        |         111
+   To convert a number from an eight-digit system to a binary one, replace each digit of the eight-digit number with the corresponding three-digit binary combination.
+
+Translation from the decimal system:
+   This method is based on dividing a decimal number by 2 and writing the remainder, starting from the last remainder, until the result of the division becomes 0. And then the numbers are written in reverse order of the remainder.
+   For example, to convert the number 10 to binary, follow these steps:
+    - Divide the number 10 by 2: 10 ÷ 2 = 5, the remainder is 0
+    - Divide the number 5 by 2: 5 ÷ 2 = 2, the remainder is 1
+    - Divide the number 2 by 2: 2 ÷ 2 = 1, the remainder is 0
+    - Divide the number 1 by 2: 1 ÷ 2 = 0, the remainder is 1
+    - Write down the leftovers in reverse order: 1010
+    
+Translation from the hexadecimal system:
+   This method is based on the representation of each character of a hexadecimal number in a four-digit binary combination. Below is the compliance table:
+     Hexadecimal character | Binary combination
+     ----------------------|-------------------
+              0            |         0000
+              1            |         0001
+              2            |         0010
+              3            |         0011
+              4            |         0100
+              5            |         0101
+              6            |         0110
+              7            |         0111
+              8            |         1000
+              9            |         1001
+              A            |         1010
+              B            |         1011
+              C            |         1100
+              D            |         1101
+              E            |         1110
+              F            |         1111
+   To convert a number from hexadecimal to binary, replace each character of the hexadecimal number with the corresponding four-digit binary combination.

@@ -50,10 +50,27 @@ def decimal_to_r(num, r, decimal_places = 5):
 def convert_number(number, from_base, to_base):
     if ((from_base in [2, 8, 16, 10]) == 0 or (to_base in [2, 8, 16, 10]) == 0): return "NULL"
     # Converting a number to decimal notation
-    decimal_number = r_to_decimal(number, from_base)
-    
-    # Converting a number from a decimal number system to a given one
-    converted_number = decimal_to_r(decimal_number, to_base)
+    try:
+        number = float(number)
+    except ValueError:
+        return "NULL"
+
+    if number < 0:
+        return "NULL"
+
+    if (from_base == 10):
+        first_part = int(number)
+        if (to_base == 2): decimal_number = bin(first_part)[2:]
+        elif (to_base == 8): decimal_number = oct(first_part)[2:]
+        elif (to_base == 16): decimal_number = hex(first_part)[2:]
+        length = len(str((number - int(number))))
+        second_part = round(number - int(number), length)
+        return second_part
+    # Convert the number to decimal
+    decimal_number = int(number) if number.is_integer() else number
+
+    # Convert the decimal number to the target base
+    converted_number = format(decimal_number, 'x' if to_base == 16 else '')
     return converted_number
     
     

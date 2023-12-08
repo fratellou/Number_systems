@@ -39,7 +39,7 @@ def conversion_mode():
             result_text.insert("1.0", f"The result: {converted_number}")
         else:
             result_text.delete("1.0", "end")
-            result_text.insert("1.0", "Error: incorrect number or number system")
+            result_text.insert("1.0", "Error: incorrect input. The number system should be equal to 2, 8, 10, 16. The number must be float(int) and non-negative")
 
     convert_button = ttk.Button(root, text="Convert", command=convert_and_display)
     convert_button.place(x=40, y=240)

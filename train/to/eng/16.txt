@@ -1,0 +1,22 @@
+This system uses sixteen digits - from 0 to 9 and from A to F. It is most common in modern computers. Using it, for example, indicate the color. #FF0000 is red.
+
+Translation from the binary system:
+The hexadecimal number system is based on 16 characters: 0-9 for decimal digits and A-F (or a-f) for hexadecimal digits (for example, A=10, B=11, C=12 and so on). To convert a binary number to a hexadecimal system, the number must be divided into groups of 4 bits and replace each group with a hexadecimal equivalent. For example:
+    - The binary number 11001010 can be divided into two groups: 1100 and 1010.
+    - Replace each group with the hexadecimal equivalent: 1100 = C, 1010 = A.
+    - The final number in the hexadecimal number system will be CA.
+
+Translation from the octal system:
+Unlike binary and hexadecimal systems, the octal number system uses 8 characters (0-7). To convert a number from the octal system to the hexadecimal number system, it is necessary to divide the number into groups of 3 digits and replace each group with a hexadecimal equivalent. For example:
+    - The octal number 625 can be divided into two groups: 6 and 25.
+    - Replace each group with the hexadecimal equivalent: 6 = 6, 25 = 15.
+    - The final number in the hexadecimal number system will be 615.
+
+Translation from the decimal system:
+To convert a number from decimal to hexadecimal, you need to sequentially divide the number by 16 and write down the remainder of the division until the result of the division becomes less than 16. Then the residuals are sequentially written in reverse order to get a number in the hexadecimal number system. For example:
+    - Decimal number 489.
+    - 489/16 = 30 (remainder 9)
+    - 30/16 = 1 (remainder 14)
+    - 1 < 16, we finish the division.
+    - Collect the leftovers in reverse order: E9.
+    - The final number in the hexadecimal number system will be E9.
