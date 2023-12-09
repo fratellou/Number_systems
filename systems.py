@@ -1,8 +1,8 @@
 def convert_number(number, from_base, to_base):
     if from_base not in [2, 8, 16, 10] or to_base not in [2, 8, 16, 10]:
         return "NULL"
-   # if number[0] == '-':
-    #    return "NULL"
+    if number[0] == '-':
+        return "NULL"
 
     # Converting a number to decimal notation
     if "." in number:
@@ -16,23 +16,17 @@ def convert_number(number, from_base, to_base):
         elif (to_base == 16): result_integer = hex(integer_part)[2:]
 
         # Converting the decimal part
-        precision = 5
+        precision = 2
         decimal_part = int(decimal_part, from_base)
-        seen_quotients = set()
         result_decimal = ""
-        
+
         for _ in range(precision):
             if decimal_part == 0:
                 break
 
-            decimal_part *= to_base
-            quotient = decimal_part // from_base
-            remainder = decimal_part % from_base
+            quotient = decimal_part * to_base // from_base
+            remainder = decimal_part * to_base % from_base
 
-            if quotient in seen_quotients:
-                break
-
-            seen_quotients.add(quotient)
             result_decimal += str(quotient)
             decimal_part = remainder
 

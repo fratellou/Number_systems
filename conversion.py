@@ -1,4 +1,3 @@
-import random
 from tkinter import Label, ttk, Text, Toplevel, messagebox
 from systems import convert_number
 
