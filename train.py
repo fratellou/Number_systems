@@ -12,7 +12,7 @@ def show_translation_info(direction, lang):
 
     filepath = filedialog.askopenfilename(initialdir=initial_dir)
     if filepath != "":
-        with open(filepath, "r") as file:
+        with open(filepath, "r", encoding="utf-8") as file:
             text = file.read()
             info_text.delete("1.0", "end")
             info_text.insert("1.0", text)
