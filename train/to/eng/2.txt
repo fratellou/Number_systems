@@ -44,3 +44,7 @@ Translation from the hexadecimal system:
               E            |         1110
               F            |         1111
    To convert a number from hexadecimal to binary, replace each character of the hexadecimal number with the corresponding four-digit binary combination.
+
+To convert a real number into a binary system, it is necessary to divide the number into integer and fractional parts. 
+The whole part is converted to binary form by dividing by 2, and the fractional part is translated by multiplying by 2 and writing the whole part of the result. 
+The resulting numbers are combined and represent the binary representation of a real number.

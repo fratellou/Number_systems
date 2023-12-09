@@ -1,7 +1,14 @@
 import random
 from systems import *
-from tkinter import ttk, Toplevel, messagebox, Scrollbar
+from tkinter import ttk, Toplevel, messagebox, StringVar
 
+def is_valid_number(value):
+    try:
+        num = int(value)
+        return num >= 0
+    except ValueError:
+        return False
+    
 def self_testing_mode():
     number_type = input("Выберите тип чисел (int/float): ")
     min_value = float(input("Введите нижнюю границу диапазона значений: "))
@@ -58,32 +65,48 @@ def check_answers(entries, tasks):
 def testing_mode():
     root = Toplevel()
     root.title("Number Systems - Testing Mode")
-    root.geometry("550x500")
+    root.geometry("400x230")
 
-    label = ttk.Label(root, text="Enter the number of tasks")
-    label.place(x=40, y=30)
-    count_entry = ttk.Entry(root)
-    count_entry.place(x=270, y=30)
+    min_label = ttk.Label(root, text="Enter the minimum number")
+    min_label.place(x=60, y=20)
+    min_entry = ttk.Entry(root)
+    min_entry.place(x=260, y=15, width=70, height=30)
+
+    max_label = ttk.Label(root, text="Enter the maximum number")
+    max_label.place(x=60, y=60)
+    max_entry = ttk.Entry(root)
+    max_entry.place(x=260, y=55, width=70, height=30)
+
+    tpe = StringVar(value="int")
+    int_btn = ttk.Radiobutton(root, text="Int", value="int", variable=tpe)
+    int_btn.place(x=120, y=100)
+
+    float_btn = ttk.Radiobutton(root, text="Float", value="float", variable=tpe)
+    float_btn.place(x=220, y=100)
 
     def start_test():
-        count = count_entry.get()
-        
-        try:
-            count = int(count) 
-        except ValueError:
-            messagebox.showerror("Error", "Input correct number.")
-            return
-        
-        try:
-            int(count) < 0 
-        except ValueError:
-            messagebox.showerror("Error", "Input correct number.")
+
+        min_val = min_entry.get()
+        max_val = max_entry.get()
+
+        if not is_valid_number(min_val) or not is_valid_number(max_val):
+            messagebox.showerror("Error", "Enter valid minimum and maximum numbers (integers, not less than 0).")
             return
 
+        min_val = int(min_val)
+        max_val = int(max_val)
+
+        
+        root.geometry("400x520")
+        count = 10
         tasks = []
 
         for _ in range(count):
-            number = random.randint(1, 100)
+            if tpe.get() == "int":
+                number = random.randint(min_val, max_val)
+            elif tpe.get() == "float":
+                number = round(random.uniform(min_val, max_val), 2)
+
             from_base = random.choice([2, 8, 10, 16])
             to_base = random.choice([2, 8, 10, 16])
 
@@ -91,25 +114,25 @@ def testing_mode():
 
         entries = []
         for i, task in enumerate(tasks):
-            task_label = ttk.Label(root, text=f"Task {i + 1}: Convert {task[0]} from base {task[1]} to base {task[2]}")
-            task_label.place(x=20, y=150 + i * 30)
+            task_label = ttk.Label(root, text=f"Convert {task[0]} from base 10 to base {task[2]}")
+            task_label.place(x=20, y=20 + i * 40)
 
             entry = ttk.Entry(root)
-            entry.place(x=350, y=150 + i * 30)
+            entry.place(x=300, y=15 + i * 40, width=70, height=30)
             entries.append(entry)
-        
+
         start_button.place_forget()
+        min_label.place_forget()
+        min_entry.place_forget()
+        max_label.place_forget()
+        max_entry.place_forget()
+        int_btn.place_forget()
+        float_btn.place_forget()
 
         submit_button = ttk.Button(root, text="Submit", command=lambda: check_answers(entries, tasks))
-        submit_button.place(x=100, y=70,  width=300, height=60)
-        
-        
-    start_button = ttk.Button(root, text="Start Test", command=start_test)
-    start_button.place(x=100, y=70, width=300, height=60)
-        # Очистка полей ввода и заданий
-        count_entry.delete(0, "end")
-        for entry in entries:
-            entry.delete(0, "end")
+        submit_button.place(x=50, y=430,  width=300, height=60)
 
+    start_button = ttk.Button(root, text="Start Test", command=start_test)
+    start_button.place(x=50, y=140, width=300, height=60)
 
     root.mainloop()

@@ -24,3 +24,6 @@ Decimal translation:
 Hexadecimal Translation:
 First, convert a hexadecimal number to a binary number.
    Then convert the binary number to an octal number using the method described above for converting from binary to octal notation.
+
+To convert to the octal system, division by 8 is used. The whole part is converted into octal form by sequentially dividing by 8 and writing down the remainder. The fractional part is translated by multiplying by 8 and writing the whole part of the result. 
+The resulting numbers are combined and represent an octal representation of a real number.

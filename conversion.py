@@ -7,25 +7,25 @@ def conversion_mode():
     
     root = Toplevel()
     root.title("Number Systems - Conversion Mode")
-    root.geometry("500x300")
+    root.geometry("500x350")
 
     label = Label(root, text="Enter a number") 
-    label.place(x=40, y=30);    
+    label.place(x=20, y=30);    
     number_entry = ttk.Entry(root)
-    number_entry.place(x=270, y=30)
+    number_entry.place(x=250, y=25, width=70, height=30)
 
     label = Label(root, text="Enter the current number system") 
-    label.place(x=40, y=60); 
+    label.place(x=20, y=70); 
     from_base_entry = ttk.Entry(root)
-    from_base_entry.place(x=270, y=60)
+    from_base_entry.place(x=250, y=65, width=70, height=30)
 
     label = Label(root, text="Enter the target number system") 
-    label.place(x=40, y=90); 
+    label.place(x=20, y=110); 
     to_base_entry = ttk.Entry(root)
-    to_base_entry.place(x=270, y=90)
+    to_base_entry.place(x=250, y=105, width=70, height=30)
 
     result_text = Text(root, width=57, height=5)
-    result_text.place(x=20, y=120)
+    result_text.place(x=20, y=150)
 
     def convert_and_display():
         number = number_entry.get()
@@ -41,6 +41,6 @@ def conversion_mode():
             return
 
     convert_button = ttk.Button(root, text="Convert", command=convert_and_display)
-    convert_button.place(x=40, y=240)
+    convert_button.place(x=100, y=260, width=300, height=60)
 
     root.mainloop()

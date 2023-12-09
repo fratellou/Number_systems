@@ -20,3 +20,6 @@ To convert a number from decimal to hexadecimal, you need to sequentially divide
     - 1 < 16, we finish the division.
     - Collect the leftovers in reverse order: E9.
     - The final number in the hexadecimal number system will be E9.
+
+To convert to the hexadecimal system, division by 16 is used. The integer part is converted to hexadecimal form by sequentially dividing by 16 and writing the remainder (0-9, as well as A, B, C, D, E, F for values 10-15). The fractional part is translated by multiplying by 16 and writing the whole part of the result. 
+The resulting digits are combined and represent a hexadecimal representation of a real number.
