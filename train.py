@@ -22,6 +22,7 @@ def training_mode():
     root = Toplevel()
     root.title("Number Systems - Training Mode")
     root.geometry("1024x600")
+    root.configure(background="#78ba91")
         
     lang =  StringVar(value=0)
     ru_btn = ttk.Radiobutton(root, text="Ru", value=1, variable=lang)
@@ -30,12 +31,12 @@ def training_mode():
     eng_btn = ttk.Radiobutton(root, text="Eng", value=0, variable=lang)
     eng_btn.place(x=820, y = 430)
 
-    btn_to = ttk.Button(root, text="Translation to another system", command=lambda: show_translation_info("to", lang.get()))
+    btn_to = ttk.Button(root, text="To another system", command=lambda: show_translation_info("to", lang.get()))
     btn_to.place(x=700, y=70, width=300, height=60)
     btn_to.bind("<Enter>", lambda event: display_tooltip(event, tooltip_label, "Explanation of the\n translation into the number system.\nSelect the file to\n which you want to transfer"))
     btn_to.bind("<Leave>", lambda event: tooltip_label.config(text=""))
  
-    btn_from = ttk.Button(root, text="Translation from another system", command=lambda: show_translation_info("from", lang.get()))
+    btn_from = ttk.Button(root, text="From another system", command=lambda: show_translation_info("from", lang.get()))
     btn_from.place(x=700, y=140, width=300, height=60)
     btn_from.bind("<Enter>", lambda event: display_tooltip(event, tooltip_label, "Explanation of the\n transfer to another number system.\nSelect the file from\n which the translation takes place"))
     btn_from.bind("<Leave>", lambda event: tooltip_label.config(text=""))

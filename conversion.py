@@ -7,6 +7,7 @@ def conversion_mode():
     root = Toplevel()
     root.title("Number Systems - Conversion Mode")
     root.geometry("500x350")
+    root.configure(background="#78ba91")
 
     label = Label(root, text="Enter a number") 
     label.place(x=20, y=30);    
