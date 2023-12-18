@@ -1,9 +1,10 @@
 from tkinter import Label, ttk, Text, Scrollbar, filedialog, Toplevel, StringVar
 
-
+#displays a tooltip when the mouse hovers over a specific interface element
 def display_tooltip(event, tooltip_label, tooltip):
     tooltip_label.config(text=tooltip)
 
+#displays information about the translation of numeric systems
 def show_translation_info(direction, lang):
     if lang == "1":
         initial_dir = "train/to/ru" if direction == "to" else "train/from/ru"
@@ -17,6 +18,7 @@ def show_translation_info(direction, lang):
             info_text.delete("1.0", "end")
             info_text.insert("1.0", text)
 
+#function opens the training mode window of the program
 def training_mode():
     global info_text  
     root = Toplevel()

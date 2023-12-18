@@ -1,3 +1,4 @@
+#function converts a number from one number system to another
 def convert_number(number, from_base, to_base):
     if from_base not in [2, 8, 16, 10] or to_base not in [2, 8, 16, 10]:
         return "NULL"

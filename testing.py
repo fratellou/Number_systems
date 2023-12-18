@@ -2,13 +2,15 @@ import random
 from systems import *
 from tkinter import ttk, Toplevel, messagebox, StringVar, Text
 
+# It tries to convert the value to an integer and returns `True` if the conversion was successful and the value is greater than or equal to zero, otherwise it returns `False'.
 def is_valid_number(value):
     try:
         num = int(value)
         return num >= 0
     except ValueError:
         return False
-    
+
+# function creates a self-test window
 def self_testing_mode():
     root = Toplevel()
     root.title("Number Systems - Self-Test Mode")
@@ -51,6 +53,7 @@ def self_testing_mode():
     float_btn = ttk.Radiobutton(root, text="Float", value="float", variable=tpe, style = 'TRadiobutton')
     float_btn.place(x=220, y=110)
 
+    # function is an event handler for the test start button. It reads the values from the minimum and maximum number input fields, checks them for validity, creates a task for the test and displays it in the window.
     def start_test():
 
         min_val = min_entry.get()
@@ -106,6 +109,7 @@ def self_testing_mode():
         task_label = ttk.Label(root, text="Enter the answer")
         task_label.place(x=10, y=50)
 
+        # the event handler for the response verification button
         def answer(entries, tasks):           
             user_answer = entry.get()
             converted_number = convert_number(tasks[i][0], tasks[i][1], tasks[i][2])
@@ -141,6 +145,7 @@ def check_answers(entries, tasks):
 
     messagebox.showinfo("Test result", f"Correct answers: {correct_answers}\nIncorrect answers: {incorrect_answers}")
 
+# function creates a new windo
 def testing_mode():
     root = Toplevel()
     root.title("Number Systems - Testing Mode")

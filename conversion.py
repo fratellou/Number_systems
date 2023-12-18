@@ -1,6 +1,7 @@
 from tkinter import Label, ttk, Text, Toplevel, messagebox
 from systems import convert_number
 
+#function checks whether the value of `value` is a valid number. It converts the value to an integer and checks whether it belongs to one of the numeric systems: 2, 8, 10 or 16. 
 def valid_number(value):
     try:
         num = int(value)
@@ -8,7 +9,8 @@ def valid_number(value):
         return num >= 0
     except ValueError:
         return False
-    
+
+#it checks each character in the value of `value` and verifies that the characters are valid for a given numeric system. The function also checks that the dot separator characters are not repeated.
 def number_system(value, system):
     ans = 1
     value.lower() 
@@ -51,6 +53,7 @@ def number_system(value, system):
                 break
     return ans 
 
+#function creates a graphical interface for the conversion mode of numeric systems
 def conversion_mode():
     
     root = Toplevel()
@@ -85,6 +88,7 @@ def conversion_mode():
     result_text = Text(root, width=40, height=5, wrap="word", font="Courier 14", foreground="#004d1a", background="#b3dfbc")
     result_text.place(x=20, y=160)
 
+    # function checks the correctness of the entered values and converts a number from the current numeric system to the target numeric system
     def convert_and_display():
 
         if not number_system(number_entry.get(), from_base_entry.get()) or not valid_number(from_base_entry.get()) or not valid_number(to_base_entry.get()):
