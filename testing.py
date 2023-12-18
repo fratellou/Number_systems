@@ -26,12 +26,12 @@ def self_testing_mode():
     
     min_label = ttk.Label(root, text="Enter the minimum number")
     min_label.place(x=10, y=10)
-    min_entry = ttk.Entry(root, style="TEntry")
+    min_entry = ttk.Entry(root, font="Courier 14", style="TEntry")
     min_entry.place(x=300, y=17, width=70, height=30)
 
     max_label = ttk.Label(root, text="Enter the maximum number")
     max_label.place(x=10, y=50)
-    max_entry = ttk.Entry(root, style="TEntry")
+    max_entry = ttk.Entry(root, font="Courier 14", style="TEntry")
     max_entry.place(x=300, y=57, width=70, height=30)
 
 
@@ -61,8 +61,12 @@ def self_testing_mode():
             return
 
 
-        result_text = Text(root, width=45, height=5,  font="Courier 14", foreground="#004d1a", background="#78ba91")
-        result_text.place(x=20, y=105)
+        result_text = Text(root, width=39, height=5,  font="Courier 14", foreground="#004d1a", background="#b3dfbc")
+        result_text.place(x=10, y=130)
+
+        root.geometry("430x280")
+        label = ttk.Label(root)
+        label.place(width=900, heigh=105)
 
         start_button.place_forget()
         min_label.place_forget()
@@ -88,19 +92,19 @@ def self_testing_mode():
         number = convert_number(str(number), 10, int(from_base))
         tasks.append((str(number), from_base, to_base))
 
-        root.geometry("400x290")
+        root.geometry("455x350")
 
         entries = []
         for i, task in enumerate(tasks):
             task_label = ttk.Label(root, text=f"Convert {task[0]} from base {task[1]} to base {task[2]}")
             task_label.place(x=10, y=10 + i * 40)
 
-            entry = ttk.Entry(root, style="TEntry")
-            entry.place(x=260, y=57 + i * 40, width=70, height=30)
+            entry = ttk.Entry(root, font="Courier 14", style="TEntry")
+            entry.place(x=220, y=57 + i * 40, width=70, height=30)
             entries.append(entry)
         
         task_label = ttk.Label(root, text="Enter the answer")
-        task_label.place(x=50, y=50)
+        task_label.place(x=10, y=50)
 
         def answer(entries, tasks):           
             user_answer = entry.get()
@@ -115,7 +119,7 @@ def self_testing_mode():
 
 
         submit_button = ttk.Button(root, text="Submit", command=lambda: answer(entries, tasks))
-        submit_button.place(x=50, y=210,  width=300, height=60)
+        submit_button.place(x=80, y=270,  width=300, height=60)
 
     start_button = ttk.Button(root, text="Start Test", command=start_test)
     start_button.place(x=50, y=150, width=300, height=60)
@@ -192,9 +196,12 @@ def testing_mode():
         max_val = int(max_val)
 
         
-        root.geometry("400x520")
+        root.geometry("570x520")
         count = 10
         tasks = []
+
+        label = ttk.Label(root)
+        label.place(width=570, heigh=420)
 
         for _ in range(count):
             if tpe.get() == "int":
@@ -212,10 +219,10 @@ def testing_mode():
         entries = []
         for i, task in enumerate(tasks):
             task_label = ttk.Label(root, text=f"Convert {task[0]} from base {task[1]} to base {task[2]}")
-            task_label.place(x=20, y=20 + i * 40)
+            task_label.place(x=10, y=10 + i * 40)
 
-            entry = ttk.Entry(root)
-            entry.place(x=300, y=15 + i * 40, width=70, height=30)
+            entry = ttk.Entry(root, font="Courier 14", style="TEntry")
+            entry.place(x=480, y=15 + i * 40, width=70, height=30)
             entries.append(entry)
 
         start_button.place_forget()
@@ -227,7 +234,7 @@ def testing_mode():
         float_btn.place_forget()
 
         submit_button = ttk.Button(root, text="Submit", command=lambda: check_answers(entries, tasks))
-        submit_button.place(x=50, y=430,  width=300, height=60)
+        submit_button.place(x=140, y=440,  width=300, height=60)
 
     start_button = ttk.Button(root, text="Start Test", command=start_test)
     start_button.place(x=50, y=150, width=300, height=60)

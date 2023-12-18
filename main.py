@@ -21,8 +21,6 @@ def main():
                     padding=10,            
                     background="#b3dfbc")  
 
-
-
     btn_style = ttk.Style()
     btn_style.configure("TButton", font="Courier 14", foreground="#004d1a", padding=10, background="#b3dfbc")
     btn_style.map("TButton", background=[("active", "#78ba91")])
