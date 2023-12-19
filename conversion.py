@@ -59,33 +59,33 @@ def conversion_mode():
     root = Toplevel()
     root.title("Number Systems - Conversion Mode")
     root.geometry("500x380")
-    root.configure(background="#78ba91")
+    root.configure(background="#c7c7c7")
 
     entry_style = ttk.Style()                    
     entry_style.configure('TEntry',   
         font="Courier 14",   
-        foreground="#004d1a",
-        fieldbackground="#78ba91") 
+        foreground="#404040",
+        fieldbackground="#c7c7c7") 
     
     label = ttk.Label(root)
     label.place(width=900, heigh=140)
 
-    label = Label(root, text="Enter a number", background="#b3dfbc", font="Courier 14", foreground="#004d1a") 
+    label = Label(root, text="Enter a number", background="#ededed", font="Courier 14", foreground="#404040") 
     label.place(x=10, y=10);    
     number_entry = ttk.Entry(root, style="TEntry", font="Courier 14")
     number_entry.place(x=370, y=10, width=70, height=30)
 
-    label = Label(root, text="Enter the current number system", background="#b3dfbc", font="Courier 14", foreground="#004d1a") 
+    label = Label(root, text="Enter the current number system", background="#ededed", font="Courier 14", foreground="#404040") 
     label.place(x=10, y=50); 
     from_base_entry = ttk.Entry(root, style="TEntry", font="Courier 14")
     from_base_entry.place(x=370, y=50, width=70, height=30)
 
-    label = Label(root, text="Enter the target number system", background="#b3dfbc", font="Courier 14", foreground="#004d1a") 
+    label = Label(root, text="Enter the target number system", background="#ededed", font="Courier 14", foreground="#404040") 
     label.place(x=10, y=90); 
     to_base_entry = ttk.Entry(root, style="TEntry", font="Courier 14")
     to_base_entry.place(x=370, y=90, width=70, height=30)
 
-    result_text = Text(root, width=40, height=5, wrap="word", font="Courier 14", foreground="#004d1a", background="#b3dfbc")
+    result_text = Text(root, width=40, height=5, wrap="word", font="Courier 14", foreground="#404040", background="#ededed")
     result_text.place(x=20, y=160)
 
     # function checks the correctness of the entered values and converts a number from the current numeric system to the target numeric system

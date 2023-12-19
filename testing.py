@@ -15,7 +15,7 @@ def self_testing_mode():
     root = Toplevel()
     root.title("Number Systems - Self-Test Mode")
     root.geometry("400x240")
-    root.configure(background="#78ba91")
+    root.configure(background="#c7c7c7")
 
     label = ttk.Label(root)
     label.place(width=400, heigh=105)
@@ -23,8 +23,8 @@ def self_testing_mode():
     entry_style = ttk.Style()                    
     entry_style.configure('TEntry',   
         font="Courier 14",   
-        foreground="#004d1a",
-        fieldbackground="#78ba91") 
+        foreground="#404040",
+        fieldbackground="#c7c7c7") 
     
     min_label = ttk.Label(root, text="Enter the minimum number")
     min_label.place(x=10, y=10)
@@ -40,11 +40,11 @@ def self_testing_mode():
     radio_style = ttk.Style()                    
     radio_style.configure('TRadiobutton',   
         font="Courier 14",   
-        foreground="#004d1a",  
+        foreground="#404040",  
         padding=10,            
-        background="#78ba91")  
+        background="#c7c7c7")  
     
-    radio_style.map('TRadiobutton', foreground=[('hover', '#004d1a')], background=[('hover', '#78ba91')])
+    radio_style.map('TRadiobutton', foreground=[('hover', '#404040')], background=[('hover', '#c7c7c7')])
 
     tpe = StringVar(value="int")
     int_btn = ttk.Radiobutton(root, text="Int", value="int", variable=tpe, style = 'TRadiobutton')
@@ -64,7 +64,7 @@ def self_testing_mode():
             return
 
 
-        result_text = Text(root, width=39, height=5,  font="Courier 14", foreground="#004d1a", background="#b3dfbc")
+        result_text = Text(root, width=39, height=5,  font="Courier 14", foreground="#404040", background="#ededed")
         result_text.place(x=10, y=130)
 
         root.geometry("430x280")
@@ -150,7 +150,7 @@ def testing_mode():
     root = Toplevel()
     root.title("Number Systems - Testing Mode")
     root.geometry("400x240")
-    root.configure(background="#78ba91")
+    root.configure(background="#c7c7c7")
 
     label = ttk.Label(root)
     label.place(width=400, heigh=105)
@@ -158,8 +158,8 @@ def testing_mode():
     entry_style = ttk.Style()                    
     entry_style.configure('TEntry',   
         font="Courier 14",   
-        foreground="#004d1a",
-        fieldbackground="#78ba91") 
+        foreground="#404040",
+        fieldbackground="#c7c7c7") 
     
     min_label = ttk.Label(root, text="Enter the minimum number")
     min_label.place(x=10, y=10)
@@ -175,11 +175,11 @@ def testing_mode():
     radio_style = ttk.Style()                    
     radio_style.configure('TRadiobutton',   
         font="Courier 14",   
-        foreground="#004d1a",  
+        foreground="#404040",  
         padding=10,            
-        background="#78ba91")  
+        background="#c7c7c7")  
     
-    radio_style.map('TRadiobutton', foreground=[('hover', '#004d1a')], background=[('hover', '#78ba91')])
+    radio_style.map('TRadiobutton', foreground=[('hover', '#404040')], background=[('hover', '#c7c7c7')])
 
     tpe = StringVar(value="int")
     int_btn = ttk.Radiobutton(root, text="Int", value="int", variable=tpe, style = 'TRadiobutton')

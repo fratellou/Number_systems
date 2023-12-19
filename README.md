@@ -9,6 +9,7 @@
 5. [Systems](#systems)
 
 The program "Number systems" is designed to teach translation into number systems 2, 8, 10, 16. The program performs the translation of numbers from one number system to another, and also works in various modes: training, conversion, self-testing and testing.
+To activate the program, you must enter the key. Available keys: 1, 123, 1234.
 
 - training mode, which provides information on how to make a transfer; 
 - conversion mode, when the program itself translates the number specified by the user from one specified number system to another; 

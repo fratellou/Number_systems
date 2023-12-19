@@ -24,16 +24,16 @@ def training_mode():
     root = Toplevel()
     root.title("Number Systems - Training Mode")
     root.geometry("1060x600")
-    root.configure(background="#78ba91")
+    root.configure(background="#c7c7c7")
     
     radio_style = ttk.Style()                    
     radio_style.configure('TRadiobutton',   
         font="Courier 14",   
-        foreground="#004d1a",  
+        foreground="#404040",  
         padding=10,            
-        background="#78ba91")
+        background="#c7c7c7")
     
-    radio_style.map('TRadiobutton', foreground=[('hover', '#004d1a')], background=[('hover', '#78ba91')])
+    radio_style.map('TRadiobutton', foreground=[('hover', '#404040')], background=[('hover', '#c7c7c7')])
 
     lang =  StringVar(value=0)
     ru_btn = ttk.Radiobutton(root, text="Ru", value=1, variable=lang, style = 'TRadiobutton')
@@ -52,10 +52,10 @@ def training_mode():
     btn_from.bind("<Enter>", lambda event: display_tooltip(event, tooltip_label, "Explanation of the transfer to another number system. Select the file from which the translation takes place"))
     btn_from.bind("<Leave>", lambda event: tooltip_label.config(text=""))
 
-    tooltip_label = Label(root, background="#b3dfbc", font="Courier 12", foreground="#004d1a", height=10, width=35,  wraplength=300)
+    tooltip_label = Label(root, background="#ededed", font="Courier 12", foreground="#404040", height=10, width=35,  wraplength=300)
     tooltip_label.place(x=680, y=240)
 
-    info_text = Text(root, wrap="word", width=57, height=23,  font="Courier 14", foreground="#004d1a", background="#b3dfbc")
+    info_text = Text(root, wrap="word", width=57, height=23,  font="Courier 14", foreground="#404040", background="#ededed")
     info_text.place(x=20, y=30)
 
     scrollbar = Scrollbar(root, command=info_text.yview)
