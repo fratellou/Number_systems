@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Menu <|-- train
+Menu <|-- testing
+Menu <|-- systems
+Menu <|-- conversion
+conversion <|-- systems
+testing  <|-- systems
+class train {
+display_tooltip()
+show_translation_info()
+training_mode()
+}
+
+class Menu {
+display_tooltip()
+ hash_activation_key()
+ save_activation_key()
+ check_key()
+ activation_mode()
+ main()
+}
+
+class testing {
+is_valid_number()
+self_testing_mode()
+ check_answers()
+ testing_mode()
+}
+
+class systems {
+convert_number()
+}
+
+class conversion {
+ valid_number()
+ number_system()
+ conversion_mode()
+}
+@enduml
