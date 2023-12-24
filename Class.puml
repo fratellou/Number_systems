@@ -1,12 +1,6 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-Menu <|-- train
-Menu <|-- testing
-Menu <|-- systems
-Menu <|-- conversion
-conversion <|-- systems
-testing  <|-- systems
 class train {
 display_tooltip()
 show_translation_info()
@@ -38,4 +32,9 @@ class conversion {
  number_system()
  conversion_mode()
 }
+
+train -down-> Menu
+systems --right--> testing
+systems --left--> conversion
+Menu <-down- systems
 @enduml

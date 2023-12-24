@@ -7,19 +7,19 @@ class train():
         tooltip_label.config(text=tooltip)
 
     # displays information about the translation of numeric systems
-    def show_translation_info(direction, lang):
-        if lang == "1":
-            initial_dir = "train/to/ru" if direction == "to" else "train/from/ru"
-        else:
-            initial_dir = "train/to/eng" if direction == "to" else "train/from/eng"
+    def show_translation_info(direction, lang, system):
+        filepath = ""
+        lang_dict = {"1": "ru", "0": "eng"}
+        direction_dict = {"to": "to", "from": "from"}
+        system_dict = {"1": "2", "2": "10", "0": "8", "3": "16"}
+        
+        filepath = 'train/' + direction_dict[direction] + '/' + lang_dict[lang] + '/' + system_dict[system] + '.txt'
 
-        filepath = filedialog.askopenfilename(initialdir=initial_dir)
         if filepath != "":
             with open(filepath, "r", encoding="utf-8") as file:
                 text = file.read()
                 info_text.delete("1.0", "end")
                 info_text.insert("1.0", text)
-
     # function opens the training mode window of the program
     def training_mode():
         global info_text  
@@ -39,17 +39,30 @@ class train():
 
         lang = StringVar(value=0)
         ru_btn = ttk.Radiobutton(root, text="Ru", value=1, variable=lang, style='TRadiobutton')
-        ru_btn.place(x=820, y=470)
+        ru_btn.place(x=800, y=510)
 
         eng_btn = ttk.Radiobutton(root, text="Eng", value=0, variable=lang, style='TRadiobutton')
-        eng_btn.place(x=820, y=500)
+        eng_btn.place(x=860, y=510)
 
-        btn_to = ttk.Button(root, text="To another system", command=lambda: train.show_translation_info("to", lang.get()))
+        system = StringVar(value=1)
+        ten_btn = ttk.Radiobutton(root, text="2", value=1, variable=system, style='TRadiobutton')
+        ten_btn.place(x=740, y=460)
+
+        oct_btn = ttk.Radiobutton(root, text="8", value=0, variable=system, style='TRadiobutton')
+        oct_btn.place(x=800, y=460)
+
+        bin_btn = ttk.Radiobutton(root, text="10", value=2, variable=system, style='TRadiobutton')
+        bin_btn.place(x=860, y=460)
+
+        hex_btn = ttk.Radiobutton(root, text="16", value=3, variable=system, style='TRadiobutton')
+        hex_btn.place(x=920, y=460)
+
+        btn_to = ttk.Button(root, text="To another system", command=lambda: train.show_translation_info("to", lang.get(), system.get()))
         btn_to.place(x=700, y=70, width=300, height=60)
         btn_to.bind("<Enter>", lambda event: train.display_tooltip(event, tooltip_label, "Explanation of the translation into the number system. Select the file to which you want to transfer"))
         btn_to.bind("<Leave>", lambda event: tooltip_label.config(text=""))
     
-        btn_from = ttk.Button(root, text="From another system", command=lambda: train.show_translation_info("from", lang.get()))
+        btn_from = ttk.Button(root, text="From another system", command=lambda: train.show_translation_info("from", lang.get(), system.get()))
         btn_from.place(x=700, y=140, width=300, height=60)
         btn_from.bind("<Enter>", lambda event: train.display_tooltip(event, tooltip_label, "Explanation of the transfer to another number system. Select the file from which the translation takes place"))
         btn_from.bind("<Leave>", lambda event: tooltip_label.config(text=""))
